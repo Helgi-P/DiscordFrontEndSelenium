@@ -39,7 +39,7 @@ class LoginPage(BasePage):
         with allure.step("Нажатие на кнопку Вход"):
             self.click_element(LoginPage.LOGIN_BUTTON)
 
-        time.sleep(5)  
+        time.sleep(10)  
 
         with allure.step("Проверка успешного входа"):
             self.verify_login_success()
@@ -47,7 +47,7 @@ class LoginPage(BasePage):
         with allure.step("Переход на 'Сервер Диплом'"):
             self.navigate_to_diplom_server()
 
-        time.sleep(5) 
+        time.sleep(10) 
 
     @allure.step("Проверка перехода на страницу каналов")
     def verify_login_success(self):
