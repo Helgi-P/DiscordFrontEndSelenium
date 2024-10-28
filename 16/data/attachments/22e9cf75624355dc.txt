@@ -1,0 +1,17 @@
+Открытие страницы: https://discord.com/login
+Проверка видимости элемента: ('xpath', '//input[@name="email"]')
+Элемент виден: ('xpath', '//input[@name="email"]')
+Ввод текста 'o.pilugin@gmail.com' в элемент: ('xpath', '//input[@name="email"]')
+Поиск элемента: ('xpath', '//input[@name="email"]')
+Элемент найден: ('xpath', '//input[@name="email"]')
+Текст 'o.pilugin@gmail.com' введён в элемент: ('xpath', '//input[@name="email"]')
+Ввод текста 'VV5DYUeX9,8!j)e' в элемент: ('xpath', '//input[@name="password"]')
+Поиск элемента: ('xpath', '//input[@name="password"]')
+Элемент найден: ('xpath', '//input[@name="password"]')
+Текст 'VV5DYUeX9,8!j)e' введён в элемент: ('xpath', '//input[@name="password"]')
+Клик на элемент: ('xpath', '//button[@type="submit" and (contains(.//div/text(), "Вход") or contains(.//div/text(), "Log In"))]')
+Поиск элемента: ('xpath', '//button[@type="submit" and (contains(.//div/text(), "Вход") or contains(.//div/text(), "Log In"))]')
+Элемент найден: ('xpath', '//button[@type="submit" and (contains(.//div/text(), "Вход") or contains(.//div/text(), "Log In"))]')
+Клик выполнен на элемент: ('xpath', '//button[@type="submit" and (contains(.//div/text(), "Вход") or contains(.//div/text(), "Log In"))]')
+Ошибка: Не удалось перейти на страницу каналов после логина
+Скриншот сохранён: /home/runner/work/DiscordFrontEndSelenium/DiscordFrontEndSelenium/screenshots/20241028-152630.png
