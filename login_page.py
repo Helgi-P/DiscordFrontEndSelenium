@@ -1,4 +1,4 @@
-import allure
+import allure 
 import time
 from base_page import BasePage
 from selenium.common.exceptions import TimeoutException
@@ -8,8 +8,6 @@ import os
 from dotenv import load_dotenv
 
 
-
-
 class LoginPage(BasePage):
 
     # Локаторы элементов страницы
@@ -17,10 +15,8 @@ class LoginPage(BasePage):
     PASSWORD_INPUT = ('xpath', '//input[@name="password"]')
     LOGIN_BUTTON = ('xpath', '//button[@type="submit" and (contains(.//div/text(), "Вход") or contains(.//div/text(), "Log In"))]')
 
-    # Локатор кнопки "Сервер Диплом"
     SERVER_DIPLOM_BUTTON = ('xpath', '//div[@aria-hidden="true" and text()="СерверДилом"]')
 
-    # Ожидаемые URL
     CHANNELS_URL = "https://discord.com/channels/@me"
     TEST_CHANNEL_URL = "https://discord.com/channels/1281160246110457919/1281160246110457922"
 
@@ -29,22 +25,26 @@ class LoginPage(BasePage):
 
     @allure.step("Вход в систему с зарегистрированными данными (аутентификация)")
     def login(self):
+        # Загрузка переменных окружения
         load_dotenv('1.env')
-
         email = os.getenv('DISCORD_EMAIL') 
         password = os.getenv('DISCORD_PASSWORD')
+        
+        # Проверка, что email и password не пустые
+        if not email or not password:
+            raise ValueError("Email или пароль не заданы в переменных окружения.")
 
         with allure.step("Ввод email"):
             self.input_text(LoginPage.EMAIL_INPUT, email)
 
         with allure.step("Ввод пароля"):
             self.input_text(LoginPage.PASSWORD_INPUT, password)
-        time.sleep(1)
+        time.sleep(1)  # Подождем для стабильности
 
         with allure.step("Нажатие на кнопку Вход"):
             self.click_element(LoginPage.LOGIN_BUTTON)
 
-        time.sleep(5)
+        time.sleep(5)  
 
         with allure.step("Проверка успешного входа"):
             self.verify_login_success()
@@ -52,7 +52,7 @@ class LoginPage(BasePage):
         with allure.step("Переход на 'Сервер Диплом'"):
             self.navigate_to_diplom_server()
 
-        time.sleep(5)
+        time.sleep(5) 
 
     @allure.step("Проверка перехода на страницу каналов")
     def verify_login_success(self):
@@ -63,8 +63,6 @@ class LoginPage(BasePage):
             print("Ошибка: Не удалось перейти на страницу каналов после логина")
             self.take_screenshot("login_failed")
             raise AssertionError(f"Не удалось перейти на {LoginPage.CHANNELS_URL}")
-
-    time.sleep(5)
 
     @allure.step("Переход на сервер 'Сервер Диплом'")
     def navigate_to_diplom_server(self):
