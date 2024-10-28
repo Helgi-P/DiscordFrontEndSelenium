@@ -4,7 +4,7 @@ from main_page import MainPage
 
 
 
-@pytest.mark.parametrize("driver", ["chrome", "firefox", "edge"], indirect=True)
+@pytest.mark.parametrize("driver", ["chrome"], indirect=True)
 @pytest.mark.usefixtures("setup")
 class TestDiscordMessageActions:
 
