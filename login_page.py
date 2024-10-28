@@ -25,12 +25,10 @@ class LoginPage(BasePage):
 
     @allure.step("Вход в систему с зарегистрированными данными (аутентификация)")
     def login(self):
-        # Загрузка переменных окружения
-        load_dotenv('1.env')
-        email = os.getenv('DISCORD_EMAIL') 
-        password = os.getenv('DISCORD_PASSWORD')
         
-        # Проверка, что email и password не пустые
+        email = os.getenv('DISCORD_EMAIL')
+        password = os.getenv('DISCORD_PASSWORD')
+
         if not email or not password:
             raise ValueError("Email или пароль не заданы в переменных окружения.")
 
@@ -39,8 +37,8 @@ class LoginPage(BasePage):
 
         with allure.step("Ввод пароля"):
             self.input_text(LoginPage.PASSWORD_INPUT, password)
-        time.sleep(1)  # Подождем для стабильности
-
+        time.sleep(1)  
+        
         with allure.step("Нажатие на кнопку Вход"):
             self.click_element(LoginPage.LOGIN_BUTTON)
 
