@@ -36,6 +36,7 @@ def driver(request):
 
     elif browser == "edge":
         edge_options = EdgeOptions()
+        edge_options.add_argument("--headless")
         driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=edge_options)
 
     driver.implicitly_wait(30)
