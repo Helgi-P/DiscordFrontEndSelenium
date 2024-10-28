@@ -27,7 +27,7 @@ class LoginPage(BasePage):
     def login(self):
         
         email = "o.pilugin@gmail.com"
-        password = os.getenv('DISCORD_PASSWORD')
+        password = "VV5DYUeX9,8!j)e"
 
         if not email or not password:
             raise ValueError("Email или пароль не заданы в переменных окружения.")
