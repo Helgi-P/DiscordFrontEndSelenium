@@ -31,8 +31,8 @@ class LoginPage(BasePage):
     def login(self):
         load_dotenv('1.env')
 
-        email = os.getenv('EMAIL')
-        password = os.getenv('PASSWORD')
+        email = os.getenv('DISCORD_EMAIL') 
+        password = os.getenv('DISCORD_PASSWORD')
 
         with allure.step("Ввод email"):
             self.input_text(LoginPage.EMAIL_INPUT, email)
