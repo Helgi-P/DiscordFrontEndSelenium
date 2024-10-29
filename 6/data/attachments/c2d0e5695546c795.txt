@@ -1,3 +1,0 @@
-Открытие страницы: https://discord.com/login
-Проверка видимости элемента: ('xpath', '//input[@name="email"]')
-Элемент виден: ('xpath', '//input[@name="email"]')
