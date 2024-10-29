@@ -25,11 +25,11 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y \
-          libgtk-3-0 \               # Зависимости для Firefox
-          libdbus-glib-1-2 \         # Зависимости для Firefox
+          libgtk-3-0 \               
+          libdbus-glib-1-2 \        
           wget \
           gnupg \
-          # Установка репозитория Microsoft для Edge
+          # Установка Microsoft Edge
           && wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg \
           && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/edge stable main" | sudo tee /etc/apt/sources.list.d/microsoft-edge.list \
           && sudo apt-get update \
@@ -48,9 +48,7 @@ jobs:
         
     - name: Lint with flake8
       run: |
-        # Stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # Exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Set environment variables
