@@ -1,7 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"broken","Mon Oct 28 13:30:54 GMT 2024","Mon Oct 28 13:30:54 GMT 2024","0","","test_DiscordFrontEnd","TestDiscordMessageActions","","","test_send_message_2_add_remove_reactions_and_cleanup[chrome]",""
-"broken","Mon Oct 28 13:30:48 GMT 2024","Mon Oct 28 13:30:48 GMT 2024","0","","test_DiscordFrontEnd","TestDiscordMessageActions","","","test_send_and_delete_message_1_with_attachment[chrome]",""
-"broken","Mon Oct 28 13:31:15 GMT 2024","Mon Oct 28 13:31:15 GMT 2024","0","","test_DiscordFrontEnd","TestDiscordMessageActions","","","test_send_message_2_add_remove_reactions_and_cleanup[firefox]",""
-"broken","Mon Oct 28 13:30:54 GMT 2024","Mon Oct 28 13:30:54 GMT 2024","0","","test_DiscordFrontEnd","TestDiscordMessageActions","","","test_send_and_delete_message_1_with_attachment[firefox]",""
-"broken","Mon Oct 28 13:31:15 GMT 2024","Mon Oct 28 13:31:15 GMT 2024","0","","test_DiscordFrontEnd","TestDiscordMessageActions","","","test_send_and_delete_message_1_with_attachment[edge]",""
-"broken","Mon Oct 28 13:31:23 GMT 2024","Mon Oct 28 13:31:23 GMT 2024","0","","test_DiscordFrontEnd","TestDiscordMessageActions","","","test_send_message_2_add_remove_reactions_and_cleanup[edge]",""
