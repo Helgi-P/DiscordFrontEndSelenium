@@ -1,4 +1,4 @@
-import allure 
+import allure  
 import time
 from base_page import BasePage
 from selenium.common.exceptions import TimeoutException
@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
 
 class LoginPage(BasePage):
 
@@ -26,8 +27,9 @@ class LoginPage(BasePage):
     @allure.step("Вход в систему с зарегистрированными данными (аутентификация)")
     def login(self):
         
-        email = " "
-        password = " "
+        # Получение данных аутентификации из переменных окружения
+        email = os.getenv("DISCORD_EMAIL")
+        password = os.getenv("DISCORD_PASSWORD")
 
         with allure.step("Ввод email"):
             self.input_text(LoginPage.EMAIL_INPUT, email)
@@ -39,7 +41,7 @@ class LoginPage(BasePage):
         with allure.step("Нажатие на кнопку Вход"):
             self.click_element(LoginPage.LOGIN_BUTTON)
 
-        time.sleep(10)  
+        time.sleep(10)  # ожидание завершения перехода на след. страницу
 
         with allure.step("Проверка успешного входа"):
             self.verify_login_success()
